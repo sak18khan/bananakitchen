@@ -1,0 +1,86 @@
+[
+  {
+    "id": "kashmir",
+    "name": "Kashmir",
+    "description": "The crown of India, known for its cold climate, saffron, and rich Wazwan tradition.",
+    "climate": "Alpine/Cold",
+    "staples": ["Rice", "Lamb", "Lotus Stem", "Walnuts"],
+    "visuals": {
+      "landscape": "Snow-capped peaks, serene lakes, and intricate wooden architecture.",
+      "kitchen": "Copper utensils, firewood heating, and community hearths.",
+      "weather": "snow"
+    },
+    "culturalSignature": "Wazwan Philosophy",
+    "themeColor": "#38bdf8"
+  },
+  {
+    "id": "punjab",
+    "name": "Punjab",
+    "description": "The breadbasket of India, famous for its robust agricultural spirit and clay oven cooking.",
+    "climate": "Extreme Semiarid",
+    "staples": ["Wheat", "Mustard Greens", "Butter", "Paneer"],
+    "visuals": {
+      "landscape": "Golden wheat fields, lively community kitchens, and sturdy brick architecture.",
+      "kitchen": "Tandoors, heavy brass vessels, and open-air cooking.",
+      "weather": "dusty"
+    },
+    "culturalSignature": "Tandoori Legacy",
+    "themeColor": "#fbbf24"
+  },
+  {
+    "id": "bengal",
+    "name": "Bengal",
+    "description": "A land of rivers and fertile plains, celebrating subtle spices and freshwater fish.",
+    "climate": "Tropical Wet & Dry",
+    "staples": ["Rice", "Freshwater Fish", "Mustard Oil", "Jaggery"],
+    "visuals": {
+      "landscape": "Lush delta wetlands, colonial townhouses, and terracotta temples.",
+      "kitchen": "Clay stoves, hand-ground mustard, and banana-leaf serving.",
+      "weather": "mist"
+    },
+    "culturalSignature": "Panch Phoron Essence",
+    "themeColor": "#10b981"
+  },
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "description": "The spice coast, where coconut, black pepper, and sea trade define the palate.",
+    "climate": "Tropical Monsoon",
+    "staples": ["Rice", "Coconut", "Black Pepper", "Seafood"],
+    "visuals": {
+      "landscape": "Palm-fringed backwaters, traditional houseboats, and white-sand beaches.",
+      "kitchen": "Coconut shell ladles, spice drying yards, and steam-based cooking.",
+      "weather": "rain"
+    },
+    "culturalSignature": "The Spice Route Hub",
+    "themeColor": "#059669"
+  },
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "description": "The desert kingdom of royals, utilizing dried ingredients and clarified butter.",
+    "climate": "Arid/Desert",
+    "staples": ["Bajra (Millet)", "Lentils", "Ghee", "Dried Chilies"],
+    "visuals": {
+      "landscape": "Sand dunes, massive sandstone forts, and colorful traditional attire.",
+      "kitchen": "Low-water cooking, stone grinders, and rich ghee storage.",
+      "weather": "heat-haze"
+    },
+    "culturalSignature": "Marwar Sustenance",
+    "themeColor": "#ea580c"
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "description": "The political and culinary heart, a melting pot of royal courts and street culture.",
+    "climate": "Humid Subtropical",
+    "staples": ["Wheat", "Meats", "Street Snacks", "Spices"],
+    "visuals": {
+      "landscape": "Grand monuments, chaotic narrow alleys, and sprawling modern avenues.",
+      "kitchen": "Imperial ovens, street-side woks, and complex spice grinding.",
+      "weather": "haze"
+    },
+    "culturalSignature": "Imperial Synthesis",
+    "themeColor": "#dc2626"
+  }
+]

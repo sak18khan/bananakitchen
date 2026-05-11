@@ -1,0 +1,88 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050816;
+  --foreground: #e2e8f0;
+  
+  --color-deep-space-black: #050816;
+  --color-midnight-navy: #0b1120;
+  --color-neon-blue: #38bdf8;
+  --color-electric-purple: #a855f7;
+  --color-soft-gold: #eab308;
+  --color-frost-white: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-deep-space: var(--color-deep-space-black);
+  --color-midnight: var(--color-midnight-navy);
+  --color-neon-blue: var(--color-neon-blue);
+  --color-electric-purple: var(--color-electric-purple);
+  --color-soft-gold: var(--color-soft-gold);
+  --color-frost-white: var(--color-frost-white);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: #38bdf833;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf866;
+}
+
+@keyframes noise {
+  0% { transform: translate(0, 0); }
+  10% { transform: translate(-1%, -1%); }
+  20% { transform: translate(-2%, 1%); }
+  30% { transform: translate(1%, -2%); }
+  40% { transform: translate(-1%, 3%); }
+  50% { transform: translate(-2%, 1%); }
+  60% { transform: translate(3%, 0); }
+  70% { transform: translate(0, 2%); }
+  80% { transform: translate(-3%, 0); }
+  90% { transform: translate(2%, 1%); }
+  100% { transform: translate(1%, 0); }
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: -100%;
+  width: 300%;
+  height: 300%;
+  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 100;
+  animation: noise 0.2s infinite;
+}
+
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
+}

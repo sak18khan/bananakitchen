@@ -1,0 +1,102 @@
+[
+  {
+    "id": "0ad-kerala-coastal",
+    "centuryId": "0ad",
+    "regionId": "kerala",
+    "category": "COMMUNITY",
+    "type": "BREAKFAST",
+    "name": "Fermented Rice & Coconut Gruel",
+    "ingredients": ["Red Rice", "Fresh Coconut Milk", "Wild Pepper", "Ginger"],
+    "cookingMethod": "Slow-fermented overnight in clay pots and lightly steamed at dawn.",
+    "historicalContext": "Early coastal communities utilized the abundance of coconut and river-grown rice.",
+    "socialStatus": "Common/Agrarian",
+    "why": {
+      "social": "A communal breakfast shared by rice farmers before heading to the paddies.",
+      "religious": "Prepared according to early nature-worship dietary cycles.",
+      "climate": "Cooling fermented grains essential for the humid tropical mornings.",
+      "trade": "Utilized black pepper, which was already being traded with early Roman and Phoenician sailors.",
+      "nutrition": "High in probiotics and slow-release carbohydrates for sustained labor."
+    },
+    "visualUrl": "/assets/india/kerala_0ad.png"
+  },
+  {
+    "id": "1500ad-kashmir-wazwan",
+    "centuryId": "1500ad",
+    "regionId": "kashmir",
+    "category": "ELITE",
+    "type": "LUNCH",
+    "name": "Goshtaba (Velvet Meatballs)",
+    "ingredients": ["Minced Lamb", "Yogurt", "Saffron", "Cardamom", "Dried Ginger"],
+    "cookingMethod": "Hand-beaten meat cooked in a rich, tempered yogurt gravy until it achieves a velvety texture.",
+    "historicalContext": "The refinement of the Persian-influenced Wazwan tradition under the Mughal governors.",
+    "socialStatus": "Royal/Nobility",
+    "why": {
+      "social": "The 'King of Dishes' in a formal Wazwan, symbolizing the host's wealth and hospitality.",
+      "religious": "Reflects the Islamic influence on meat preparation and celebratory feasts.",
+      "climate": "Rich in fats and spices to provide warmth during the harsh Himalayan winters.",
+      "trade": "Heavy use of Saffron, the 'Red Gold' traded along the Silk Route.",
+      "nutrition": "High protein and healthy fats for cold-weather endurance."
+    },
+    "visualUrl": "/assets/india/kashmir_1500ad.png"
+  },
+  {
+    "id": "800ad-rajasthan-fort",
+    "centuryId": "800ad",
+    "regionId": "rajasthan",
+    "category": "MILITARY",
+    "type": "DINNER",
+    "name": "Bajra Khichdi with Ghee",
+    "ingredients": ["Pearl Millet (Bajra)", "Moong Dal", "Clarified Butter (Ghee)", "Salt"],
+    "cookingMethod": "Coarse-ground millet and lentils boiled together with minimal water, topped with a massive dollop of ghee.",
+    "historicalContext": "Survival food for Rajput warriors defending hill forts in the arid Marwar region.",
+    "socialStatus": "Military/Warrior",
+    "why": {
+      "social": "Standard issue meal for the garrison, designed for quick preparation and high satiety.",
+      "religious": "A 'Satvik' yet strengthening meal adhering to warrior codes.",
+      "climate": "Millet is drought-resistant; Ghee provides energy without requiring much water for digestion.",
+      "trade": "Utilized local desert grains when trade routes were cut off during sieges.",
+      "nutrition": "Extremely high in iron and magnesium, essential for physical combat."
+    },
+    "visualUrl": "/assets/india/rajasthan_800ad.png"
+  },
+  {
+    "id": "1800ad-bengal-fish",
+    "centuryId": "1800ad",
+    "regionId": "bengal",
+    "category": "COMMUNITY",
+    "type": "LUNCH",
+    "name": "Mustard Oil Fish Curry",
+    "ingredients": ["Rohu Fish", "Panch Phoron", "Mustard Oil", "Turmeric", "Green Chilies"],
+    "cookingMethod": "Freshwater fish pan-fried in mustard oil and simmered in a light, pungent gravy.",
+    "historicalContext": "The colonial-era boom in river trade made freshwater fish the central staple of Bengali life.",
+    "socialStatus": "Middle Class/Traders",
+    "why": {
+      "social": "The hallmark of the 'Bhadralok' (gentlefolk) culture emerging in colonial Calcutta.",
+      "religious": "Fish is considered 'fruit of the water' and is essential in auspicious rituals.",
+      "climate": "Mustard oil acts as a natural preservative and digestive aid in the humid delta heat.",
+      "trade": "Introduction of Green Chilies by the Portuguese completely replaced black pepper in this era.",
+      "nutrition": "High in Omega-3 fatty acids and essential minerals from the river silt."
+    },
+    "visualUrl": "/assets/india/bengal_1800ad.png"
+  },
+  {
+    "id": "2000ad-delhi-street",
+    "centuryId": "2000ad",
+    "regionId": "delhi",
+    "category": "STREET",
+    "type": "DINNER",
+    "name": "Tawa Soya Chaap",
+    "ingredients": ["Soy Protein", "Tomato-Cream Gravy", "Butter", "Chaat Masala"],
+    "cookingMethod": "Marinated soy sticks grilled on a flat tawa and tossed in a spicy, buttery gravy.",
+    "historicalContext": "The rise of modern vegetarian street food in the post-globalization urban landscape.",
+    "socialStatus": "Urban General",
+    "why": {
+      "social": "A fast-paced, democratic meal enjoyed by college students and office workers alike.",
+      "religious": "A modern 'meaty' experience for the massive vegetarian population of North India.",
+      "climate": "Heavy, spicy flavors designed to cut through the pollution and energy of the city night.",
+      "trade": "Global trade in soy and modern industrial food processing.",
+      "nutrition": "High protein plant-based alternative for the urban diet."
+    },
+    "visualUrl": "/assets/india/delhi_2000ad.png"
+  }
+]
