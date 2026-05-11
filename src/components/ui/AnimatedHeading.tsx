@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { cn } from "@/lib/utils"
 
 interface AnimatedHeadingProps {
@@ -12,7 +12,7 @@ interface AnimatedHeadingProps {
 export function AnimatedHeading({ text, className, subtitle }: AnimatedHeadingProps) {
   const characters = Array.from(text)
 
-  const containerVars = {
+  const containerVars: Variants = {
     initial: { opacity: 0 },
     whileInView: {
       opacity: 1,
@@ -23,7 +23,7 @@ export function AnimatedHeading({ text, className, subtitle }: AnimatedHeadingPr
     }
   }
 
-  const childVars = {
+  const childVars: Variants = {
     initial: { opacity: 0, y: 20, filter: "blur(8px)" },
     whileInView: { 
       opacity: 1, 

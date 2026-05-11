@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, Variants } from "framer-motion"
 import { Sparkles } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -24,7 +24,7 @@ export function DiscoveryNode({ title, content, themeColor, position = "top", cl
     space: "bg-electric-purple text-electric-purple border-electric-purple/30 shadow-[0_0_20px_rgba(168,85,247,0.4)]",
   }
 
-  const tooltipVariants = {
+  const tooltipVariants: Variants = {
     hidden: { opacity: 0, scale: 0.8, y: position === "bottom" ? -10 : 10 },
     visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 20 } },
     exit: { opacity: 0, scale: 0.8, transition: { duration: 0.2 } }

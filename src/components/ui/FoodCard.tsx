@@ -10,6 +10,7 @@ export interface LogicChain {
   climate?: string;
   trade?: string;
   class?: string;
+  religion?: string;
 }
 
 interface FoodCardProps {
@@ -126,7 +127,7 @@ export function FoodCard({ title, description, ingredients, socialClass, eraThem
             >
               <div className="grid grid-cols-1 gap-5">
                 {Object.entries(logicChain).map(([key, val]) => {
-                  const Icons = { geography: Map, climate: Wind, trade: TrendingUp, class: Users };
+                  const Icons = { geography: Map, climate: Wind, trade: TrendingUp, class: Users, religion: Sparkles };
                   const Icon = Icons[key as keyof typeof Icons];
                   if (!val) return null;
                   return (

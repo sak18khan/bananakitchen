@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-type Era = "hero" | "rome" | "viking" | "mughal" | "edo" | "space" | "unknown";
+type Era = "hero" | "origin" | "rome" | "viking" | "mughal" | "edo" | "space" | "explorer" | "unknown";
 
 interface ScrollContextType {
   activeEra: Era;
