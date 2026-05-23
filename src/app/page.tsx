@@ -1,95 +1,24 @@
-"use client"
+import { getISTDateString } from '@/lib/timezone';
+import { getTodayCombo } from '@/lib/db';
+import HomeClient from './HomeClient';
 
-import { useState, useEffect } from "react"
-import { AnimatePresence, motion } from "framer-motion"
-import { NewHero } from "@/components/sections/NewHero"
-import { ChronologicalTimeline } from "@/components/sections/ChronologicalTimeline"
-import { CountryExplorer } from "@/components/sections/CountryExplorer"
-import { AboutSection } from "@/components/sections/AboutSection"
-import { ScrollProvider } from "@/providers/ScrollProvider"
-import { AtmosphereController } from "@/components/ui/AtmosphereController"
-import { AudioController } from "@/components/ui/AudioController"
-import { Footer } from "@/components/layout/Footer"
-import { IndiaTimeline } from "@/components/sections/india/IndiaTimeline"
+// Ensure the page is dynamically rendered every request to get the correct IST date
+export const dynamic = 'force-dynamic';
 
-type ExperienceMode = "landing" | "timeline" | "countries" | "india-timeline"
+export default async function Page() {
+  const dateStr = getISTDateString();
+  const todayCombo = await getTodayCombo(dateStr);
 
-export default function Home() {
-  const [mode, setMode] = useState<ExperienceMode>("landing")
+  if (!todayCombo) {
+    // Should never happen due to the mock fallback in getTodayCombo, but just in case
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh] text-center p-6 bg-white border-4 border-banana-dark rounded-3xl shadow-[6px_6px_0px_#1A1A1A]">
+        <span className="text-4xl mb-4">😰</span>
+        <h1 className="text-2xl font-black text-banana-dark mb-2">No Combo Found!</h1>
+        <p className="text-stone-500 font-bold">The kitchen is currently locked. Check back in a bit!</p>
+      </div>
+    );
+  }
 
-  // Handle browser back button or escape to return to landing
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setMode("landing")
-    }
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
-  }, [])
-
-  return (
-    <ScrollProvider>
-      <main className="flex min-h-screen flex-col bg-black selection:bg-neon-blue/30 selection:text-frost-white overflow-x-hidden relative">
-        <AtmosphereController />
-        <AudioController />
-
-        <AnimatePresence mode="wait">
-          {mode === "landing" && (
-            <motion.div
-              key="landing"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0, scale: 1.05 }}
-              transition={{ duration: 1 }}
-              className="flex flex-col"
-            >
-              <NewHero 
-                onStartFromTime={() => setMode("timeline")} 
-                onExploreCountries={() => setMode("countries")} 
-              />
-              <AboutSection />
-              <Footer />
-            </motion.div>
-          )}
-
-          {mode === "timeline" && (
-            <motion.div
-              key="timeline"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <ChronologicalTimeline onBack={() => setMode("landing")} />
-            </motion.div>
-          )}
-
-          {mode === "countries" && (
-            <motion.div
-              key="countries"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            >
-              <CountryExplorer 
-                onBack={() => setMode("landing")} 
-                onSelectIndia={() => setMode("india-timeline")}
-              />
-            </motion.div>
-          )}
-
-          {mode === "india-timeline" && (
-            <motion.div
-              key="india-timeline"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-            >
-              <IndiaTimeline onBack={() => setMode("countries")} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </main>
-    </ScrollProvider>
-  )
+  return <HomeClient todayCombo={todayCombo} todayDateStr={dateStr} />;
 }

@@ -1,88 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #050816;
-  --foreground: #e2e8f0;
-  
-  --color-deep-space-black: #050816;
-  --color-midnight-navy: #0b1120;
-  --color-neon-blue: #38bdf8;
-  --color-electric-purple: #a855f7;
-  --color-soft-gold: #eab308;
-  --color-frost-white: #e2e8f0;
+@theme {
+  --color-banana-bg: #FFFBF0;
+  --color-banana-yellow: #FFD93D;
+  --color-banana-dark: #1A1A1A;
+  --color-banana-green: #4CAF50;
+  --color-banana-red: #E53935;
+  --font-sans: var(--font-nunito), sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-deep-space: var(--color-deep-space-black);
-  --color-midnight: var(--color-midnight-navy);
-  --color-neon-blue: var(--color-neon-blue);
-  --color-electric-purple: var(--color-electric-purple);
-  --color-soft-gold: var(--color-soft-gold);
-  --color-frost-white: var(--color-frost-white);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: #FFFBF0;
+  --foreground: #1A1A1A;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), sans-serif;
+  background-color: var(--color-banana-bg);
+  color: var(--color-banana-dark);
+  font-family: var(--font-sans);
   overflow-x: hidden;
 }
 
-/* Premium Scrollbar */
+/* Premium Rounded Scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: #050816;
+  background: var(--color-banana-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #38bdf833;
-  border-radius: 10px;
+  background: var(--color-banana-yellow);
+  border: 3px solid var(--color-banana-bg);
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #38bdf866;
+  background: #e0be30;
 }
 
-@keyframes noise {
-  0% { transform: translate(0, 0); }
-  10% { transform: translate(-1%, -1%); }
-  20% { transform: translate(-2%, 1%); }
-  30% { transform: translate(1%, -2%); }
-  40% { transform: translate(-1%, 3%); }
-  50% { transform: translate(-2%, 1%); }
-  60% { transform: translate(3%, 0); }
-  70% { transform: translate(0, 2%); }
-  80% { transform: translate(-3%, 0); }
-  90% { transform: translate(2%, 1%); }
-  100% { transform: translate(1%, 0); }
+/* 3D Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
 }
 
-.noise-overlay {
-  position: fixed;
-  inset: -100%;
-  width: 300%;
-  height: 300%;
-  background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
-  opacity: 0.03;
-  pointer-events: none;
-  z-index: 100;
-  animation: noise 0.2s infinite;
+.preserve-3d {
+  transform-style: preserve-3d;
 }
 
-.glass-morphism {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-.text-glow {
-  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+.rotate-y-180 {
+  transform: rotateY(180deg);
 }
 
-.text-glow-gold {
-  text-shadow: 0 0 20px rgba(234, 179, 8, 0.4);
+.flip-card-inner {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Streak Flame Pulsing Animation */
+@keyframes pulse-flame {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 1px rgba(229, 57, 53, 0.4));
+  }
+  50% {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 6px rgba(255, 152, 0, 0.8));
+  }
+}
+
+.pulse-flame {
+  animation: pulse-flame 1.5s infinite ease-in-out;
+}
+
+/* Custom slow transition for results loading bar */
+@keyframes fill-bar {
+  from { width: 0%; }
+}
+
+.animate-fill-bar {
+  animation: fill-bar 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
